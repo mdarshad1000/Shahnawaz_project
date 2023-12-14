@@ -12,7 +12,7 @@ Huffman Coding is a lossless data compression algorithm where variable length pr
 By doing this, we are able to represent a character in possibly <strong>less than 8 bits or 1 byte</strong> therefore reducing the size of the compressed file. In order to assign these codes, a huffman tree is generated and written into the compressed file so that it can be decompressed later from the information available in this tree. For every <strong>left sub-tree we move into, we take 0 and similarly 1 for the right subtree</strong> until we reach a node that has a character (not an internal node).  More on [Huffman Coding](https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/). This application can be used to compress any text based file i.e files with extensions like ```.txt```, ```.c```, ```.cpp```, ```.html```, ```.js```, ```.docx``` and so on!
 
 ![Compress2](static/Compress2.png)
-![Compress3](static/Compress3.png)
+
 
 ## Working
 The following steps are followed to build and traverse the <strong>HUFFMAN TREE</strong>
@@ -29,7 +29,7 @@ The following steps are followed to build and traverse the <strong>HUFFMAN TREE<
 It is important to ensure the number of bits in the string produced by replacing each character with its code is a multiple of 8 so that we can now read 8 bits at a time, get its decimal equivalent and the coresponding ascii equivalent character is finally written to the compressed file. This is where the actual compression takes place and the compressed file generated is smaller than the input file.<br>
 
 ![Decompress2](static/Decompress2.png)
-
+![Decompress3](static/Decompress3.png)
 
 #### Note : 
 The size of the input file must be big enough ( <strong>> 500 bytes</strong>) to notice the size difference. A very small input file if encoded/compressed would otherwise result in a bigger compressed file owing to the additional contents of the hashmap written at the beginning (which would surpass the reduction in size obtained by replacing characters with prefix codes). This should be avoided as there is not point in having a compression algorithm if the input file is so small.
